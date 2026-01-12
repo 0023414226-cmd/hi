@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(270deg, #667eea, #764ba2, #43cea2, #185a9d);
+    background-size: 600% 600%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hiệu ứng ánh sáng nền */
+body::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+    top: 10%;
+    left: 20%;
+    animation: floatLight 8s ease-in-out infinite;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    bottom: 10%;
+    right: 15%;
+    animation: floatLight 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatLight {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+}
+
+/* Khung form */
+.hop {
+    position: relative;
+    width: 360px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    color: #fff;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hop h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.nhom-input {
+    margin-bottom: 18px;
+}
+
+.nhom-input input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nhom-input input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.nhom-input input:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+/* Nút */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Link */
+.lien-ket {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.lien-ket a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.lien-ket a:hover {
+    color: #ffeb3b;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(270deg, #667eea, #764ba2, #43cea2);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* LOGO CSS */
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo .icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border-radius: 16px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+@keyframes logoFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* NHÂN VẬT CSS */
+.nhan-vat {
+    position: absolute;
+    bottom: 20px;
+    left: -80px;
+    width: 60px;
+    height: 100px;
+    animation: diChuyen 12s linear infinite;
+}
+
+@keyframes diChuyen {
+    0% { left: -80px; }
+    50% { left: 100%; }
+    100% { left: -80px; }
+}
+
+.dau {
+    width: 40px;
+    height: 40px;
+    background: #ffccbc;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.than {
+    width: 50px;
+    height: 50px;
+    background: #4facfe;
+    border-radius: 10px;
+    margin: 5px auto;
+}
+
+.chan {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    margin: 0 auto;
+}
+
+.chan div {
+    width: 10px;
+    height: 30px;
+    background: #333;
+    animation: buocDi 0.6s infinite alternate;
+}
+
+@keyframes buocDi {
+    from { transform: rotate(10deg); }
+    to { transform: rotate(-10deg); }
+}
+
+/* FORM */
+.hop {
+    z-index: 2;
+    width: 360px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    color: #fff;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hop h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nhom-input {
+    margin-bottom: 15px;
+}
+
+.nhom-input input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255,255,255,0.25);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #ff9a9e;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MÈO ẨN SAU FORM */
+.meo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(120px);
+    width: 120px;
+    height: 120px;
+    background: #ffcc80;
+    border-radius: 60px 60px 40px 40px;
+    z-index: 1;
+    transition: 0.6s ease;
+}
+
+/* Tai mèo */
+.meo .tai {
+    position: absolute;
+    top: -20px;
+    width: 30px;
+    height: 30px;
+    background: #ffb74d;
+    transform: rotate(45deg);
+}
+
+.meo .trai {
+    left: 15px;
+}
+
+.meo .phai {
+    right: 15px;
+}
+
+/* Mắt mèo */
+.meo .mat {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.meo .mat span {
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+/* Khi hover vào form – mèo ló đầu ra */
+.hop:hover ~ .meo {
+    transform: translate(-50%, -50%) translateY(-40px);
+}
+
+/* Khi rời chuột – mèo chui lại */
+.meo {
+    pointer-events: none;
+}
+
